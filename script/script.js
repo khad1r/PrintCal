@@ -96,10 +96,7 @@ async function loadFile() {
         // PAGES.forEach(page => {
         //     OVERALL_PAGES['overalPrice'] += page['price'];
         // })
-        activatedPage(1);
-        document.querySelector('#total-price').textContent = PRICE_FORMAT.format(OVERALL_PAGES['overalPrice']);
-        generatedColoredPagesBtn();
-        loading.style.display = 'none';
+
     }
 }
 
@@ -166,10 +163,17 @@ async function loadPDF(file) {
                 'CMYKcolor': CMYKcolor,
                 'price': price
             })
+            if (num == TOTAL_PAGE) finalize()
         });
     }
 }
 
+function finalize() {
+    activatedPage(1);
+    document.querySelector('#total-price').textContent = PRICE_FORMAT.format(OVERALL_PAGES['overalPrice']);
+    generatedColoredPagesBtn();
+    loading.style.display = 'none';
+}
 async function renderPDFPage(canvas, page) {
     const dpi = 96 * window.devicePixelRatio;
     const scale = dpi / 72;
