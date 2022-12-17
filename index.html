@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Print Color Coverage</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="loading">Loading&#8230;</div>
+	<div class="float-nav" id="setting-btn">
+		<a href="#" class="menu-btn">
+			<ul>
+				<li class="line"></li>
+				<li class="line"></li>
+				<li class="line"></li>
+			</ul>
+			<div class="menu-txt">Settings</div>
+		</a>
+	</div>
+	<div class="main-nav">
+		<div class="nav-menu">
+			<h3 class="nav-title">Settings</h3>
+			<div class="form-group">
+				<span>Calculate Scale</span>
+				<input class="form-field" id="calculate_scale" type="number" min="20" step="5" max="100">
+				<span>%</span>
+			</div>
+			<div class="price-rules">
+				<h4>Price Rule
+					<!-- <button>+</button> -->
+				</h4>
+				<table>
+					<tr>
+						<td colspan="4">
+							<h4 class="price-title">Color Page</h4>
+						</td>
+					</tr>
+					<tr>
+						<td>Cyan + Magenta + Yellow</td>
+						<td>Greater than<input type="number" min="0" max="100" class="rule-percentage"
+								id="rule1-percentage">%</td>
+						<td>&nbsp; : &nbsp;</td>
+						<td>Rp. <input type="number" class="price" id="rule1-price"></td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<h4 class="price-title">Full Color Page</h4>
+						</td>
+					</tr>
+					<tr>
+						<td>Cyan + Magenta + Yellow</td>
+						<td>Greater than<input type="number" min="0" max="100" class="rule-percentage"
+								id="rule2-percentage">%</td>
+						<td>&nbsp; : &nbsp;</td>
+						<td>Rp. <input type="number" class="price" id="rule2-price"></td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<h4 class="price-title">Full Black Page</h4>
+						</td>
+					</tr>
+					<tr>
+						<td>Black</td>
+						<td>Greater than<input type="number" min="0" max="100" class="rule-percentage"
+								id="rule3-percentage">%</td>
+						<td>&nbsp; : &nbsp;</td>
+						<td>Rp. <input type="number" class="price" id="rule3-price"></td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<h4 class="price-title">Normal Page</h4>
+						</td>
+					</tr>
+					<tr>
+						<td>Black</td>
+						<td>Greater than<input type="number" min="0" max="100" class="rule-percentage"
+								id="rule4-percentage">%</td>
+						<td>&nbsp; : &nbsp;</td>
+						<td>Rp. <input type="number" class="price" id="rule4-price"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="upload-container">
+		<div class="drag-area">
+			<span class="drag-area-header">Drag & Drop to Upload File</span>
+			<span>OR</span>
+			<label for="file" class="file-picker">Browse File</label>
+			<input type="file" id="file" hidden>
+		</div>
+	</div>
+	<div class="app">
+		<div class="result">
+			<h2 class="page-number">Page <span id="page">1</span></h2>
+			<hr>
+			<div class="page-result">
+				<table>
+					<tr>
+						<td width="30%">Cyan</td>
+						<td width="10%">:</td>
+						<td width="20%"><span id="cyan-percentage"></span>%</td>
+					</tr>
+					<tr>
+						<td>Magenta</td>
+						<td>:</td>
+						<td><span id="magenta-percentage"></span>%</td>
+					</tr>
+					<tr>
+						<td>Yellow</td>
+						<td>:</td>
+						<td><span id="yellow-percentage"></span>%</td>
+					</tr>
+					<tr>
+						<td>Black</td>
+						<td>:</td>
+						<td><span id="black-percentage"></span>%</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							Calculated Price : <span id="page-price"></span>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<hr>
+			Total Price : <span id="total-price"></span>
+			<hr>
+			Colored Pages:
+			<div id="colorPages"></div>
+		</div>
+		<div class="document">
+			<img id="document-viewer" src="" alt="" srcset="">
+			<div class="control-container">
+				<button id="prev_btn"> &#60;</button>
+				<input type="number" min="1" step="1" value="1" id="current_page" />
+				<button id="next_btn"> &#62;</button>
+			</div>
+		</div>
+		<canvas id="draw_image" width="220" height="277" style="border: 1px solid #d3d3d3; display: none;">
+			Your browser does not support the HTML5 canvas tag.</canvas>
+	</div>
+	<script src="script/script.js"></script>
+</body>
+
+</html>
