@@ -286,12 +286,14 @@ input {
   width: 100%;
   color: #fff;
 }
-.main-nav .nav-menu .price-rules h4 {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+.main-nav .nav-menu .price-rules .nav-subtitle {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
-.main-nav .nav-menu .price-rules h4 button {
-  margin-left: 0.2rem;
+.main-nav .nav-menu .price-rules .nav-subtitle h4 {
+  margin-right: 2rem;
+  font-size: 1.4rem;
 }
 .main-nav .nav-menu .price-rules > ul {
   display: block;

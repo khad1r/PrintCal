@@ -273,6 +273,8 @@ input {
             margin-bottom: 2rem;
         }
 
+
+
         .form-group {
             position: relative;
             display: flex;
@@ -334,12 +336,14 @@ input {
             width: 100%;
             color: #fff;
 
-            h4 {
-                font-size: 1.2rem;
-                margin-top: 1rem;
+            .nav-subtitle {
+                display: flex;
+                flex-direction: row;
+                align-content: center;
 
-                button {
-                    margin-left: .2rem;
+                h4 {
+                    margin-right: 2rem;
+                    font-size: 1.4rem;
                 }
             }
 
